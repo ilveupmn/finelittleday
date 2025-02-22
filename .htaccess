@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirect all non-existing URLs to homepage
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ / [R=301,L]
+</IfModule>
+
+# Alternative method using ErrorDocument
+# ErrorDocument 404 /
